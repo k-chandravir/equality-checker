@@ -8,33 +8,33 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CentimeterTest {
+public class LengthTest {
 
     @Test
     void toCheckEqualityWhenOneCentimeterIsComparedToAnotherOneCentimeter(){
-        Centimeter oneCentimeter = new Centimeter(1);
+        Length oneCentimeter = Length.centimeter(1);
 
-        Centimeter anotherOneCentimeter = new Centimeter(1);
+        Length anotherOneCentimeter = Length.centimeter(1);
 
         assertThat(oneCentimeter, is(equalTo(anotherOneCentimeter)));
     }
 
     @Test
     void toCheckEqualityWhenOneMetreIsComparedToHundredCentimeter(){
-        Centimeter oneMetre = Centimeter.getCentimeterFromMetre(1);
+        Length oneMetre = Length.metre(1);
 
-        Centimeter hundredCentimeter = new Centimeter(100);
+        Length hundredCentimeter = Length.centimeter(100);
 
         assertThat(oneMetre, is(equalTo(hundredCentimeter)));
     }
 
     @Test
     void toCheckEqualityWhenOneHundredCentimeterIsComparedToZeroPointOneKilometer(){
-        Centimeter oneMetre = Centimeter.getCentimeterFromKilometer(0.1);
+        Length oneKilometer = Length.metre(0.1);
 
-        Centimeter hundredCentimeter = new Centimeter(100);
+        Length hundredCentimeter = Length.centimeter(100);
 
-        assertThat(oneMetre, is(not(equalTo(hundredCentimeter))));
+        assertThat(oneKilometer, is(not(equalTo(hundredCentimeter))));
     }
 
 }
