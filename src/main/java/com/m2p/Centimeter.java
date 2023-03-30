@@ -7,6 +7,14 @@ public class Centimeter {
         this.magnitude = magnitude;
     }
 
+    public static Centimeter getCentimeterFromKilometer(double magnitude){
+        return new Centimeter(magnitude * 100000);
+    }
+
+    public static Centimeter getCentimeterFromMetre(double magnitude){
+        return new Centimeter(magnitude * 100);
+    }
+
     @Override
     public boolean equals(Object object){
         if(this == object){
